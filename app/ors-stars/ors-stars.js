@@ -9,7 +9,12 @@
 			restrict: 'EAC',
 			link: function(scope, element, attrs) {
 				console.log('orsStars link', arguments);
-				var note = (attrs.note === undefined) ? 4 : attrs.note;
+				var note;
+				if (scope[attrs.note] != undefined) {
+					note = scope[attrs.note];
+				} else {
+					note = (attrs.note === undefined) ? 4 : attrs.note;
+				}
 				var html = '';
 				for (var i = 0; i < note; i++) {
 					html += '<img src="ors-stars/img/yellow_star.png" />';

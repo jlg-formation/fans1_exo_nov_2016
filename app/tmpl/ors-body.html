@@ -1,5 +1,6 @@
-Body<br/>
-
+Body<br ng-init="myNote=3" />
+<input type="text" ng-model="myNote" /><br/>
+myNote: {{myNote}}<br/>
 <ors-stars note="2"></ors-stars>
-<div ors-stars></div>
+<div ors-stars note="myNote"></div>
 <div class="ors-stars"></div>
