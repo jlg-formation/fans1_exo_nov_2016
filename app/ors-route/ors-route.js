@@ -3,14 +3,18 @@
 
 	var app = angular.module('ors-route', ['ngRoute']);
 
-	app.config(['$routeProvider', function($routeProvider) {
+	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+		$locationProvider
+			.html5Mode(true);
 
 		$routeProvider
 			.when('/', {
 				templateUrl: 'ors-route/tmpl/home.html'
 			})
 			.when('/products', {
-				templateUrl: 'ors-route/tmpl/products.html'
+				templateUrl: 'ors-route/tmpl/products.html',
+				controller: 'ProductCtrl',
+				controllerAs: '$ctrl'
 			})
 			.when('/services', {
 				templateUrl: 'ors-route/tmpl/services.html'
@@ -33,7 +37,6 @@
 		};
 		
 		$rootScope.isActive = function(path) {
-			console.log('isActive', arguments);
 			return {active: $location.path() === path };
 		};
 		
