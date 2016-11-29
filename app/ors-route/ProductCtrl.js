@@ -10,6 +10,11 @@
 		
 		this.start = function() {
 			console.log('start', arguments);
+			$http.get('/ws/s1').then(function(response) {
+				console.log('s1', response.data);
+			}).catch(function(error) {
+				console.error('error', error);
+			});
 		};
 	}]);
 })();

@@ -3,13 +3,17 @@
 
 	var express = require('express'); // charge ExpressJS
 	var serveIndex = require('serve-index');
+	
+	var webservice = require('./ws/index.js');
 
 	var app = express();
 	
 	app.use(express.static('.'));
 	app.use(serveIndex('.', {icons: true}));
+	app.use('/ws', webservice);
+	
 
-	app.all(['/services*', '/products*', '/contact*'], function(req, res) {
+	app.all(['/app/services*', '/app/products*', '/app/contact*'], function(req, res) {
 		res.sendFile('./app/index.html', {root: __dirname});
 	});
 
