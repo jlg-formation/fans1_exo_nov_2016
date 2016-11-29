@@ -1,2 +1,5 @@
 Header
+<menu>
+	<item ng-repeat="object in items" ng-click="goto(object.path)" ng-class="isActive(object.path)">{{object.label}}</item>
+</menu>
 <hr/>

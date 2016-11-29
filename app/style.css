@@ -1,1 +1,25 @@
+* {
+	box-sizing: border-box;
+}
 
+menu {
+	margin: 10px;
+	text-align: center;
+}
+
+menu item {
+	padding: 20px;
+	margin: 5px;
+	background-color: gray;
+	cursor: pointer;
+}
+
+menu item:hover {
+	padding: 20px;
+	background-color: green;
+}
+
+menu item.active {
+	padding: 20px;
+	background-color: red;
+}
