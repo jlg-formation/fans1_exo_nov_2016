@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	
-	var clone = function(o) {
+	window.clone = function(o) {
 		var result = {};
 		for (var p in o) {
 			if (o[p] !== null && typeof o[p] === 'object') {
@@ -13,19 +13,7 @@
 		return result;
 	};
 	
-	var a = {
-		x: 2,
-		y: { z: 4 }
-	};
-	var b = clone(a);
 	
-	console.log('a.y.z', a.y.z);
-	console.log('b.y.z', b.y.z);
-	
-	b.y.z = 5;
-	
-	console.log('a.y.z', a.y.z);
-	console.log('b.y.z', b.y.z);
 	
 	
 })();

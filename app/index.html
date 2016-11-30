@@ -6,15 +6,19 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body ng-app="mainApp">
+		<span us-spinner="{radius:30, width:8, length: 16}" spinner-on="showSpinner"></span>
 		<ors-header></ors-header>
 		<ng-view></ng-view>
 		<ors-footer></ors-footer>
+		<script src="../bower_components/spin.js/spin.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="../bower_components/angular-route/angular-route.js"></script>
+		<script src="../bower_components/angular-spinner/angular-spinner.js"></script>
 		<script src="app.js"></script>
 		<script src="ors-stars/ors-stars.js"></script>
 		<script src="ors-route/ors-route.js"></script>
 		<script src="ors-route/ProductCtrl.js"></script>
+		<script src="jlg-spinner.js"></script>
 		<script src="clone.js"></script>
 	</body>
 </html>

@@ -2,8 +2,13 @@
 	'use strict';
 	
 
-	var app = angular.module('mainApp', ['ors-stars', 'ors-route']);
+	var app = angular.module('mainApp', ['ors-stars', 'ors-route', 'jlg-spinner']);
 
+	
+	app.config(['$compileProvider', function ($compileProvider) {
+		$compileProvider.debugInfoEnabled(false);
+	}]);
+	
 	app.directive('orsHeader', function() {
 		return {
 			restrict: 'E',
