@@ -3,16 +3,15 @@
 
 	var app = angular.module('ors-route');
 
-	
 	app.controller('ProductCtrl', ['$scope', '$injector', function ProductCtrl($scope, $injector) {
 		var $log = $injector.get('$log');
 		$log.debug('ProductCtrl', arguments);
 		var $http = $injector.get('$http');
 		var $q = $injector.get('$q');
 		var $ctrl = this;
-		
+
 		this.state = undefined;
-		
+
 		this.start = function() {
 			$log.debug('start', arguments);
 			this.state = 'processing...';

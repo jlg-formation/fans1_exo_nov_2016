@@ -26,20 +26,20 @@
 				redirectTo: '/'
 			});
 	}]);
-	
+
 	app.run(['$injector', function($injector) {
 		var $rootScope = $injector.get('$rootScope');
 		var $location = $injector.get('$location');
-		
+
 		$rootScope.goto = function(path) {
 			console.log('goto', arguments);
 			$location.path(path);
 		};
-		
+
 		$rootScope.isActive = function(path) {
-			return {active: $location.path() === path };
+			return {active: $location.path() === path};
 		};
-		
+
 		$rootScope.items = [{
 			label: 'Accueil',
 			path: '/'
